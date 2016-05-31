@@ -262,6 +262,38 @@ ReactDOM.render(${1:<$2 />}, document.${3:querySelector('$4')});
 endsnippet
 
 #
+## React Redux
+#
+
+snippet impBAC "import bindActionCreators from redux" b
+import { bindActionCreators } from 'redux';
+endsnippet
+
+snippet impConn "import connect from react-redux" b
+import { connect } from 'react-redux';
+endsnippet
+
+snippet mstp "mapStateToProps" b
+function mapStateToProps(state) {
+  return {
+	  $1
+	};
+}
+endsnippet
+
+snippet mdtp "mapDispatchToProps" b
+function mapDispatchToProps(dispatch) {
+  return {
+	  $1
+	};
+}
+endsnippet
+
+snippet expConn "export default connect()()" b
+export default connect(${1:mapStateToProps}${2:, }${3:mapDispatchToProps})($4);
+endsnippet
+
+#
 ## React Router
 #
 
