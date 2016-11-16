@@ -1,5 +1,5 @@
 #
-#  React snippets
+#	React snippets
 #
 
 #
@@ -15,7 +15,7 @@ class ${2:ClassComponent} extends Component {
 	render() {
 		return (
 			${4:<div>
-			  $5
+				$5
 			</div>}
 		);
 	}
@@ -32,12 +32,12 @@ snippet funCom "create simple functional component" b
 import React from 'react';
 
 const ${1:functionalComponent} = (${2:props}) => {
-  $0
-  return (
-    ${3:<div>
-		  $4
+	$0
+	return (
+		${3:<div>
+			$4
 		</div>}
-  );
+	);
 };
 
 export default $1;
@@ -51,19 +51,19 @@ snippet classCom "create cimple class component" b
 import React, { Component } from 'react';
 
 class ${1:ClassComponent} extends Component {
-  constructor(props) {
+	constructor(props) {
 		super(props);
 
 		${2:this.state = {
-		  $3
+			$3
 		};}
 	}
 
-  $0
+	$0
 	render() {
-    return (
-		  ${4:<div>
-        $5
+		return (
+			${4:<div>
+				$5
 			</div>}
 		);
 	}
@@ -114,8 +114,8 @@ endsnippet
 
 snippet ret() "return ();" b
 return (
-  ${1:<div>
-    $2
+	${1:<div>
+		$2
 	</div>}
 );
 endsnippet
@@ -196,7 +196,7 @@ snippet ren
 render() {
 	return (
 		${1:<div>
-		  $2
+			$2
 		</div>}
 	);
 }
@@ -209,10 +209,10 @@ endsnippet
 
 snippet constr "construct state" b
 constructor(props) {
-  super(props);
+	super(props);
 
-  ${1:this.state = {
-	  $2
+	${1:this.state = {
+		$2
 	};}
 }
 
@@ -275,16 +275,16 @@ endsnippet
 
 snippet mstp "mapStateToProps" b
 function mapStateToProps(state) {
-  return {
-	  $1
+	return {
+		$1
 	};
 }
 endsnippet
 
 snippet mdtp "mapDispatchToProps" b
 function mapDispatchToProps(dispatch) {
-  return {
-	  $1
+	return {
+		$1
 	};
 }
 endsnippet
@@ -310,8 +310,8 @@ import ${3} from '${4}';
 import ${6} from '${7}';
 $0
 export default (
-  <Route path="/" component={$1}>
-	  <IndexRoute component={$3} />
+	<Route path="/" component={$1}>
+		<IndexRoute component={$3} />
 		<Route path="${5}" component={$6} />
 	</Route>
 );
@@ -319,6 +319,6 @@ endsnippet
 
 snippet link "add react-router link"
 <Link to="${1}" ${2:className="${3}"}>
-  $4
+	$4
 </Link>$0
 endsnippet
