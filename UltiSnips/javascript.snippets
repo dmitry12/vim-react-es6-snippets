@@ -1,3 +1,7 @@
+global !p
+import re
+endglobal
+
 #
 #	React snippets
 #
@@ -9,8 +13,7 @@
 snippet rcc "create class component" b
 import React, { ${1:PropTypes, }Component } from 'react';
 
-class ${2:ClassComponent} extends Component {
-
+class ${2:`!p snip.rv = re.sub("/index.js", "", re.sub(".*(components|pages|containers)/", "", path))`} extends Component {
 	$0
 	render() {
 		return (
@@ -29,15 +32,13 @@ endsnippet
 #
 
 snippet funCom "create simple functional component" b
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-const ${1:functionalComponent} = (${2:props}) => {
-	$0
-	return (
-		${3:<div>
-			$4
-		</div>}
-	);
+const ${1:`!p snip.rv = re.sub("/index.js", "", re.sub(".*(components|pages|containers)/", "", path))`} = (${2:props}) => (
+);
+
+$1.propTypes = {
+
 };
 
 export default $1;
@@ -50,7 +51,7 @@ endsnippet
 snippet classCom "create cimple class component" b
 import React, { Component } from 'react';
 
-class ${1:ClassComponent} extends Component {
+class ${1:`!p snip.rv = re.sub("/index.js", "", re.sub(".*(components|pages|containers)/", "", path))`} extends Component {
 	constructor(props) {
 		super(props);
 
@@ -97,15 +98,16 @@ import $1 from '$2';
 $0
 endsnippet
 
-snippet jsx "define jsx dom" b
-/**
- * @jsx React.DOM
- */
-$0
-endsnippet
-
 snippet expdef "export default" b
 export default $0;
+endsnippet
+
+#
+## React Native
+#
+
+snippet impRN "import react native" b
+import { ${1:Text, }${2:View} } from 'react-native';
 endsnippet
 
 #
@@ -322,3 +324,5 @@ snippet link "add react-router link"
 	$4
 </Link>$0
 endsnippet
+
+
